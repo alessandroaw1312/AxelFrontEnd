@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  align-items: center;
+  background: #D8AA96; /* You may want to change this if desired */
+  color: rgba(0, 0, 0, 0.8);
+  display: grid;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  height: 100vh;
+  justify-items: center;
+  width: 100vw;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* Two equal columns */
+  width: 100vw;   /* Full viewport width */
+  height: 100vh;  /* Full viewport height */
+  overflow: hidden;  /* Prevent scrollbars */
+}
+
+.input-container {
+  background-color: yellow;
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Arrange items in three rows */
+  width: 500px;
+  height: 100%; /* Ensure full height within the parent */
+  padding: 10px; /* Padding around the container */
+}
+
+.pets-gender {
+  padding: 10px; /* Add some padding */
+}
+
+.radio-container {
+  background: #FFFFFF; /* Updated background color */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: inline-block;
+  padding: 5px;
+}
+
+.radio-container label {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  transition: 0.2s all ease-in-out;
+  width: 80px;
+}
+
+.radio-container input[type=radio] {
+  display: none; /* Hide radio buttons */
+}
+
+.radio-container input[type=radio]:checked + label {
+  background: #0d5d8f; /* Original selected background */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.auto-resize-textarea {
+  width: 100%; /* Full width */
+  min-height: 50px; /* Minimum height */
+  resize: both; /* Allow manual resizing */
+  overflow: hidden; /* Hide overflow */
+  padding: 10px; /* Padding for comfort */
+  border: 1px solid #ccc; /* Border styling */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+}
+
+.pets-photo {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  margin-top: 10px; /* Add margin for spacing */
+}
+
+.pets-photo button {
+  border: none;
+  border-radius: 50%;
+  height: 38px;
+  margin-right: 10px;
+  outline: none;
+  width: 38px;
+}
+
+.pets-photo button i {
+  color: #FFFFFF; /* Updated icon color */
+  font-size: 16px;
+}
+
+.selection-container {
+  background: #0d5d8f; /* Original background color */
+  display: grid;
+  grid-template-areas: "." ".";
+  width: 500px;
+}
+
+.selection-container h1:nth-of-type(1) {
+  color: #FFFFFF; /* Updated header color */
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.selection-container .set {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.bottom-line {
+  display: flex;
+  justify-content: center;
+}
+
+.selection-container input {
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Updated border color */
+  border-radius: 4px;
+  height: 38px;
+  line-height: 38px;
+  padding-left: 5px;
+  background: #EAEAEA; /* Updated input background */
+}
+
+.selection-container input,
+.selection-container label {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.selection-container header {
+  padding: 40px;
+}
+
+.selection-container label,
+.selection-container input,
+.selection-container .pets-photo {
+  width: 176px;
+}
+
+.selection-container footer {
+  align-items: center;
+  background: #F7F7F7; /* Updated footer background */
+  display: grid;
+  padding: 5px 40px;
+}
+
+.selection-container footer button {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 38px;
+  line-height: 38px;
+  width: 100px;
+  border-radius: 19px;
+  font-family: "Montserrat", sans-serif;
+  background: #1E90FF; /* Updated button background */
+  color: #FFFFFF; /* Updated button text color */
+}
+
+.selection-container footer #back {
+  background: #F7F7F7; /* Updated background color */
+  transition: 0.2s all ease-in-out;
+}
+
+.selection-container footer #back:hover {
+  background: #0056b3; /* Updated hover color */
+  color: white;
+}
+
+.selection-container footer #next {
+  background: #0d5d8f; /* Original button color */
+  border: 1px solid transparent;
+  color: #FFFFFF; /* Updated text color */
+}
+
+.selection-container footer #next:hover {
+  background: #0056b3; /* Updated hover color */
+}
+
+.pets-name label,
+.pets-breed label,
+.pets-birthday label,
+.pets-gender label,
+.pets-spayed-neutered label,
+.pets-weight label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  color: #000; /* Adjust as needed */
+  margin-top: 20px;
+}
+
+.loader {
+  border: 5px solid rgba(0, 0, 0, 0.1); /* Light grey */
+  border-top: 5px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite; /* Spin animation */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

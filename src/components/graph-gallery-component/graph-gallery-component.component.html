@@ -1,0 +1,24 @@
+<!-- Back Button -->
+<button (click)="goBack()" class="fa-solid fa-backward"></button>
+
+<h1>Your Graphs</h1>
+
+<!-- Conditional layout based on visualizeGraph -->
+<div [ngClass]="visualizeGraph ? 'graph-container' : ''">
+
+  <!-- Cards Section -->
+  <div class="container card-section">
+    <div *ngFor="let graph of gotUserGraphs">
+      <div class="content">
+        <h2>{{ graph.topic }}</h2>
+        <span>{{ graph.summary }}</span>
+        <p><span class="link" (click)="openGraph(graph.graph_id)">Open</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Graph visualization -->
+  <div *ngIf="visualizeGraph" class="graph-section">
+    <app-d3-graph [graphId]="this.selectedGraphId"></app-d3-graph>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="ag-format-container">
+  <app-search-bar></app-search-bar>
+  <div class="ag-courses_box">
+    <div class="ag-courses_item" *ngFor="let graph of gotUserGraphs">
+      <a class="ag-courses-item_link" (click)="selectGraphToUse(graph)">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">
+            {{graph.topic}}
+        </div>
+        <div class="ag-courses-item_date-box">
+          <span class="ag-courses-item_date">
+            {{graph.summary}}
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

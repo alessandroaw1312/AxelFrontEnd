@@ -1,0 +1,13 @@
+<!--<p>BARRA OPZIONI</p>-->
+<!--<svg [attr.width]="width" [attr.height]="height" [attr.viewBox]="'0 0 ' + width + ' ' + height"></svg>-->
+<!--<button (click)="closeGraph()">X</button>-->
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<button (click)="closeGraph()" aria-label="Close" style="background: none; border: none; cursor: pointer;">
+  <span class="material-icons">close</span>
+</button>
+<svg [attr.width]="width" [attr.height]="height" [attr.viewBox]="'0 0 ' + width + ' ' + height"></svg>
+</body>

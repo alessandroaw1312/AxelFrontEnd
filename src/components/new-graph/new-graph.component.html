@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<button (click)="goBack()" class="fa-solid fa-backward"></button>
+
+<p>new-graph works!</p>
+<div class='main-container'>
+  <div class='selection-container'>
+    <header>
+      <h1>Enter some information's about your document, or let AI do the trick!</h1>
+      <div class='set'>
+        <div class='pets-gender'>
+          <label for='pet-gender-female'>Generation</label>
+          <div class='radio-container'>
+            <input (click)="enableAiGeneration()" checked='' id='pet-gender-female' name='pet-gender' type='radio' value='female'>
+            <label for='pet-gender-female'>Manual</label>
+            <input (click)="enableAiGeneration()" id='pet-gender-male' name='pet-gender' type='radio' value='male'>
+            <label for='pet-gender-male'>AI</label>
+          </div>
+        </div>
+      </div>
+      <div class='set'>
+        <div class='pets-name'>
+          <label>Topic</label>
+          <textarea
+            class="auto-resize-textarea"
+            [(ngModel)]="topicTextInput"
+            (input)="autoResize($event)"
+            placeholder="Type your text here..."></textarea>
+        </div>
+      </div>
+      <div class='set'>
+        <div class='pets-breed'>
+          <label>Summary</label>
+          <textarea
+            class="auto-resize-textarea"
+            [(ngModel)]="summaryTextInput"
+            (input)="autoResize($event)"
+            placeholder="Type your text here..."></textarea>
+        </div>
+      </div>
+      <div class='pets-weight'>
+        <label for='pet-weight-0-25'>Document's lenght</label>
+        <div class='radio-container'>
+          <input [disabled]="aiGeneration" checked='' id='pet-weight-0-25' name='pet-weight' type='radio' value='0-25'>
+          <label for='pet-weight-0-25'>0-5 pages</label>
+          <input [disabled]="aiGeneration" id='pet-weight-25-50' name='pet-weight' type='radio' value='25-50'>
+          <label for='pet-weight-25-50'>5-10 pages</label>
+          <input [disabled]="aiGeneration" id='pet-weight-50-100' name='pet-weight' type='radio' value='50-100'>
+          <label for='pet-weight-50-100'>10-20 pages</label>
+          <input [disabled]="aiGeneration" id='pet-weight-100-plus' name='pet-weight' type='radio' value='100+'>
+          <label for='pet-weight-100-plus'>20+ pages</label>
+        </div>
+      </div>
+    </header>
+    <div *ngIf="loading" class="spinner">
+      Loading...
+      <div class="loader"></div>
+    </div>
+    <footer>
+      <div class='bottom-line'>
+        <button [disabled]="!enableGraphProduction()" (click)="generateGraph()" id='next'>Send</button>
+      </div>
+    </footer>
+  </div>
+  <div class="input-container">
+    <div class='pets-gender'>
+      <label>Document type</label>
+      <div class='radio-container'>
+        <input checked='' id='pet-type-text-radio' name='pet-type' type='radio' value='text'>
+        <label for='pet-type-text-radio' (click)="this.enableInputText()">Text</label>
+        <input id='pet-type-other-radio' name='pet-type' type='radio' value='other'>
+        <label for='pet-type-other-radio' (click)="this.enableDocumentSelection()">Other</label>
+      </div>
+    </div>
+
+    <div *ngIf="showInputText">
+    <textarea
+      class="auto-resize-textarea"
+      [(ngModel)]="documentTextInput"
+      (input)="autoResize($event)"
+      placeholder="Type your text here..."></textarea>
+    </div>
+
+    <div *ngIf="showSelectDocument">
+      <div class='pets-photo'>
+        <button id='pets-upload'>
+          <i class='fas fa-camera-retro'></i>
+        </button>
+        <label for='pets-upload'>Upload a document</label>
+      </div>
+    </div>
+  </div>
+
+</div>

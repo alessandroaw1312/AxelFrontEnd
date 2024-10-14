@@ -1,0 +1,9 @@
+.link {
+  color: #0d5d8f; /* Change to your desired color */
+  text-decoration: underline; /* Optional: underline the link */
+  cursor: pointer; /* Change cursor to pointer for better UX */
+}
+
+.link:hover {
+  color: #0056b3; /* Change color on hover */
+}

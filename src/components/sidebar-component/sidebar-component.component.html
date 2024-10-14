@@ -1,0 +1,41 @@
+
+<div id="nav-bar">
+  <input id="nav-toggle" type="checkbox"/>
+  <div id="nav-header"><a id="nav-title" href="https://codepen.io" target="_blank"><i class="fab fa-codepen"></i>Graphs</a>
+    <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
+    <hr/>
+  </div>
+  <div id="nav-content">
+
+    <div class="nav-button" (click)="openChat()">
+      <i class="fas fa-images"></i>
+      <span>Chat</span>
+    </div>
+
+    <div class="nav-button" (click)="openGraphs()">
+      <i class="fas fa-images"></i>
+      <span>Your Graphs</span>
+    </div>
+
+    <div class="nav-button" (click)="createNewGraph()">
+      <i class="fas fa-images"></i>
+      <span>Create New Graph</span>
+    </div>
+
+    <hr/>
+    <hr/>
+    <div class="nav-button"><i class="fas fa-gem"></i><span>Help</span></div>
+    <div id="nav-content-highlight"></div>
+  </div>
+  <input id="nav-footer-toggle" type="checkbox"/>
+  <div id="nav-footer">
+    <div id="nav-footer-heading">
+      <div id="nav-footer-avatar"><img src="https://gravatar.com/avatar/4474ca42d303761c2901fa819c4f2547"/></div>
+      <div id="nav-footer-titlebox"><a id="nav-footer-title" href="https://codepen.io/uahnbu/pens/public" target="_blank">User</a><span id="nav-footer-subtitle">Role</span></div>
+      <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
+    </div>
+    <div id="nav-footer-content">
+      <p>FOOTER CONTENT</p>
+    </div>
+  </div>
+</div>
